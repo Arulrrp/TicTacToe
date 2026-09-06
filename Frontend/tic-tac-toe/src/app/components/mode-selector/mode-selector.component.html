@@ -1,0 +1,18 @@
+<div class="mode-selector">
+  <button
+    type="button"
+    class="mode-btn"
+    [class.active]="mode === 'TwoPlayer'"
+    (click)="select('TwoPlayer')"
+  >
+    Two Player
+  </button>
+  <button
+    type="button"
+    class="mode-btn"
+    [class.active]="mode === 'VsComputer'"
+    (click)="select('VsComputer')"
+  >
+    Play Against Computer
+  </button>
+</div>
