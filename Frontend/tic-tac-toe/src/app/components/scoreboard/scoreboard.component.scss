@@ -1,0 +1,54 @@
+.scoreboard {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 200px;
+
+  h3 {
+    margin: 0 0 12px;
+    font-size: 1rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.label.x {
+  color: #60a5fa;
+}
+
+.label.o {
+  color: #f87171;
+}
+
+.value {
+  font-weight: 700;
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  color: #d1d5db;
+  cursor: pointer;
+
+  &:hover {
+    background: #374151;
+  }
+}
