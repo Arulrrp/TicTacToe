@@ -1,0 +1,48 @@
+<div class="app-shell">
+  <header>
+    <h1>Tic Tac Toe</h1>
+  </header>
+
+  <app-mode-selector
+    *ngIf="gameState"
+    [mode]="gameState.mode"
+    (modeChange)="onModeChange($event)"
+  ></app-mode-selector>
+
+  <div class="error-banner" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+  <div class="main-layout" *ngIf="gameState">
+    <aside class="side-panel left">
+      <app-scoreboard
+        [scoreboard]="gameState.scoreboard"
+        (resetScoreboard)="onResetScoreboard()"
+      ></app-scoreboard>
+    </aside>
+
+    <section class="board-panel">
+      <div class="status" [class.won]="gameState.status === 'Won'" [class.draw]="gameState.status === 'Draw'">
+        {{ statusMessage }}
+      </div>
+
+      <app-board
+        [board]="gameState.board"
+        [winningCells]="gameState.winningCells"
+        [status]="gameState.status"
+        (cellClicked)="onCellClicked($event)"
+      ></app-board>
+
+      <div class="actions">
+        <button type="button" (click)="onUndo()" [disabled]="!gameState.canUndo">
+          Undo Last Move
+        </button>
+        <button type="button" (click)="onResetGame()">Reset Game</button>
+      </div>
+    </section>
+
+    <aside class="side-panel right">
+      <app-move-history [moves]="gameState.moveHistory"></app-move-history>
+    </aside>
+  </div>
+
+  <div class="loading" *ngIf="loading">Loading...</div>
+</div>
