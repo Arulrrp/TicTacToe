@@ -1,0 +1,20 @@
+<div class="move-history">
+  <h3>Move History</h3>
+  <div class="empty" *ngIf="moves.length === 0">No moves yet.</div>
+  <table *ngIf="moves.length > 0">
+    <thead>
+      <tr>
+        <th>Move</th>
+        <th>Player</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let move of moves">
+        <td>{{ move.moveNumber }}</td>
+        <td [class.x]="move.player === 'X'" [class.o]="move.player === 'O'">{{ move.player }}</td>
+        <td>Row {{ move.row + 1 }}, Column {{ move.col + 1 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

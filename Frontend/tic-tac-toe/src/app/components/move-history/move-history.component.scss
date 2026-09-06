@@ -1,0 +1,49 @@
+.move-history {
+  background: #1f2937;
+  border: 1px solid #374151;
+  border-radius: 10px;
+  padding: 16px;
+  min-width: 260px;
+  max-height: 280px;
+  overflow-y: auto;
+
+  h3 {
+    margin: 0 0 12px;
+    font-size: 1rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+}
+
+.empty {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 4px 6px;
+  border-bottom: 1px solid #374151;
+}
+
+th {
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+td.x {
+  color: #60a5fa;
+  font-weight: 700;
+}
+
+td.o {
+  color: #f87171;
+  font-weight: 700;
+}
